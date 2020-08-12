@@ -18,27 +18,33 @@ public class YahooSearchMain {
 		driver = new ChromeDriver();  //arranca el navegador, obvio Chrome
 		driver.manage().timeouts().implicitlyWait(30,  TimeUnit.SECONDS); //configura las esperas implicitas hasta 30 segundos
 		driver.get("http://www.yahoo.com"); //navega a la url que le indiquemos
+
+		//obtiene los elementos de busqueda y de boton de busqueda
 		WebElement searchBox = driver.findElement(By.id("header-search-input"));
 		WebElement searchButton = driver.findElement(By.id("header-desktop-search-button"));
 		
-		searchBox.clear();
-		searchBox.sendKeys("Selenium");
-		searchButton.click();
-		
+		searchBox.clear();  //limpia la caja de texto
+		searchBox.sendKeys("Selenium");  //envia el texto selenium a la caja de texto
+		searchButton.click();  // da click en el boton de busqueda
+
+		//encontro un elemento con la palabra selenium
 		WebElement seleniumLink = driver.findElement(By.xpath("//h3[.='Selenium' and ./following-sibling::div[contains(.,'selenium.dev')] ] /a"));
-		seleniumLink.click();
+		seleniumLink.click();  //da click al elemento
 		
-		ArrayList<String> windowIds = new ArrayList<String>(driver.getWindowHandles());
-		System.out.println("Number of windows: " + windowIds.size());
-		
+		//se obtienen el numero de ventanas
+		System.out.println("Number of windows: " + driver.getWindowHandles().size());
+
+		//driver.getWindowHandles() = lista de ventanas
+		//busca las ventanas abiertas
 		for(String windowId: driver.getWindowHandles()) {
 			driver.switchTo().window(windowId);
 		}
-		
+
+		//busca el elemento con un link text downloads
 		WebElement downloadLink = driver.findElement(By.linkText("Downloads"));
-		downloadLink.click();
+		downloadLink.click();  //da click al elemento
 		
-		driver.quit();
+		driver.quit();  // cierra el conjunto de todas las ventanas abiertas
 
 	}
 
