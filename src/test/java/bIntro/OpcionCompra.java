@@ -33,7 +33,7 @@ public class OpcionCompra extends Base{
         String precioE, capacityE, nameE;
 
 
-        try
+     /*   try
         {
              //wait(circulo);
             wait(capacity);
@@ -41,17 +41,17 @@ public class OpcionCompra extends Base{
            // wait(name);
 
             //datos de la clase
-            capacityC = telcelular.getCapacidad();
+         capacityC = telcelular.getCapacidad();
             precioC = telcelular.getPrecio();
             nameC = telcelular.getName();
 
-            //datos del elemento
+
             capacityE = capacity.getText();
             precioE = precio.getText();
             //nameE = name.getText();
 
             flt_price = parseFloat((precioE.replace("$", "").replace(",","")));
-         if (capacityC.equals(capacityE) && precioE.equals(flt_price))
+            if (capacityC.equals(capacityE) && precioC == flt_price)
             {
                 System.out.println("El telefono seleccionado es el correcto");
             }
@@ -62,7 +62,7 @@ public class OpcionCompra extends Base{
         {
             System.out.println(e.getMessage());
             System.out.println("No se pudo obtener la información del teléfono");
-        }
+        }*/
     }
 
 }

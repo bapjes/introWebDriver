@@ -39,11 +39,11 @@ public class TelefonosSmartPhones extends Base{
          }
     }
 
-    public  Celular capturarInformacionTelefono(int i) {
+  /*  public  Celular capturarInformacionTelefono(int i) {
         String txt_name;
         String txt_capacity;
         float flt_price;
-        Celular telefono  = new Celular();
+        //Celular telefono  = new Celular();
 
         try {
 
@@ -68,7 +68,7 @@ public class TelefonosSmartPhones extends Base{
                 flt_price = parseFloat((costo.replace("$", "").replace(",","")));
 
                 //asigna los valores a la clase celular
-                telefono.setName(txt_name);
+               telefono.setName(txt_name);
                 telefono.setPrecio(flt_price);
                 telefono.setCapacidad(txt_capacity);
                 System.out.println("La información del teléfono fué capturada");
@@ -77,11 +77,11 @@ public class TelefonosSmartPhones extends Base{
         {
             System.out.println("No se pudo obtener la información");
             System.out.println(ex.getStackTrace());
-            telefono = null;
+            //telefono = null;
             return null;
         }
         return telefono;
-    }
+    }*/
 
     public void clickTelefono(int telefono) throws Exception {
         scrollToWebElement(list_telephones.get(telefono));

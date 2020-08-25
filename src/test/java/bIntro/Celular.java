@@ -2,37 +2,27 @@ package bIntro;
 
 public class Celular {
     private String nombre;
-    private float precio;
-    private String capacidad;
+    private int capacidad;
+    private double precio;
 
-    public String getName()
-    {
+    public Celular(String nombre, int capacidad, double precio) {
+        this.nombre = nombre;
+        this.capacidad = capacidad;
+        this.precio = precio;
+    }
+
+    public String getNombre() {
         return this.nombre;
     }
 
 
-    public void setName(String name)
-    {
-        this.nombre = name;
-    }
-
-    public  void setPrecio(float price)
-    {
-        this.precio = price;
-    }
-
-    public float getPrecio()
-    {
-        return this.precio;
-    }
-
-    public String getCapacidad()
-    {
+    public int getCapacidad() {
         return this.capacidad;
     }
 
-    public void setCapacidad(String capacity)
-    {
-        this.capacidad = capacity;
+
+    public double getPrecio() {
+        return this.precio;
     }
+
 }
